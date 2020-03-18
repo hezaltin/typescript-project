@@ -1,4 +1,4 @@
-class Department {
+abstract class Department {
     public departmentName:string;
     private departmentDetails:string[];
     protected departmentType:string;
@@ -20,15 +20,40 @@ class Department {
     describe(this:Department){
         console.log('Department:', this.departmentName)
     }
+
+    abstract abstractDescribe(this:Department):void
 }
 
 class DepartmentMode extends Department{
     constructor(id:string){
         super(id,'IT',['max','millian'],'Engineering')
     }
+
+    abstractDescribe(){
+        console.log(`Department Mode Id is ${this.id}`)
+    }
 }
 
-const departmentMode = new DepartmentMode('mode1');
+
+class DepartmentType extends Department {
+    constructor(id:string){
+        super(id,'ECE',['Michael','Hez'],'Engineering')
+    }
+
+    abstractDescribe(){
+        console.log(`Department Mode Type is ${this.id}`)
+        console.log(this)
+    }
+}
+
+//Abstract classes ==> used to enforce to modify the method of the base class in the exteneded classes
+// Abstract classes does not have implementation in the base class we have to use only the defining method
+
+const departmentMode = new DepartmentMode('d1');
 console.log(departmentMode)
-const instantiateDepartment = new Department('d1','IT',['max','millian'],'Engineering');
-console.log(instantiateDepartment)
+console.log(departmentMode.abstractDescribe())
+const instantiateDepartmentType = new DepartmentType('d2');
+console.log(instantiateDepartmentType.abstractDescribe())
+
+// const instantiateDepartment = new Department('d1','IT',['max','millian'],'Engineering');
+// console.log(instantiateDepartment)
