@@ -1,5 +1,5 @@
 "use strict";
-var userName = 'Mike';
+const userName = 'Mike';
 console.log(userName);
 var Role;
 (function (Role) {
@@ -7,13 +7,13 @@ var Role;
     Role[Role["READ_ONLY"] = 101] = "READ_ONLY";
     Role[Role["AUTHOR"] = 102] = "AUTHOR";
 })(Role || (Role = {}));
-var person = {
+const person = {
     name: 'michael',
     age: 30,
     role: Role.ADMIN
 };
 console.log(person.role);
-var userwithTuple = {
+const userwithTuple = {
     name: '',
     age: 30,
     hobbies: ['Coding', 'Driving'],
