@@ -1,6 +1,6 @@
 "use strict";
 var _a, _b;
-var el = {
+const el = {
     name: 'Mike',
     privileage: ['user'],
     startDate: new Date()
@@ -23,27 +23,21 @@ function printElevatedEmployee(emp) {
     }
 }
 console.log({ name: 'Mike', startDate: new Date() });
-var Car = (function () {
-    function Car() {
-    }
-    Car.prototype.drive = function () {
+class Car {
+    drive() {
         console.log('driving Car');
-    };
-    return Car;
-}());
-var Truck = (function () {
-    function Truck() {
     }
-    Truck.prototype.drive = function () {
+}
+class Truck {
+    drive() {
         console.log('driving Truck');
-    };
-    Truck.prototype.loadAmount = function (amount) {
+    }
+    loadAmount(amount) {
         console.log('driving Truck amount of ', amount);
-    };
-    return Truck;
-}());
-var v1 = new Car();
-var v2 = new Truck();
+    }
+}
+const v1 = new Car();
+const v2 = new Truck();
 function useVehicle(vehicle) {
     vehicle.drive();
     if (vehicle instanceof Truck) {
@@ -52,7 +46,7 @@ function useVehicle(vehicle) {
 }
 console.log(useVehicle(v2));
 function movingAnimal(animal) {
-    var speed;
+    let speed;
     switch (animal.type) {
         case 'bird':
             speed = animal.flyingSpeed;
@@ -64,16 +58,16 @@ function movingAnimal(animal) {
     console.log('moving speed is ', speed);
 }
 movingAnimal({ type: 'bird', flyingSpeed: 100 });
-var getHtmlParagraph = document.getElementById('userPara');
-var getInput = document.getElementById('input');
-var getAnotherInput = document.getElementById('inputAnother');
-var getTruthy = document.getElementById('getTruthy');
+const getHtmlParagraph = document.getElementById('userPara');
+const getInput = document.getElementById('input');
+const getAnotherInput = document.getElementById('inputAnother');
+const getTruthy = document.getElementById('getTruthy');
 if (getTruthy) {
     getTruthy.value = 'Get Truthy';
 }
 getInput.value = 'Hello World';
 getAnotherInput.value = 'Another Hello World';
-var errorTypes = {
+const errorTypes = {
     email: 'Email is not valid',
     userName: 'must Enter user name'
 };
@@ -83,13 +77,13 @@ function addNumberOverloads(a, b) {
     }
     return a + b;
 }
-var functionOverloads = addNumberOverloads(10, '10');
-var fetchUserData = {
+const functionOverloads = addNumberOverloads(10, '10');
+const fetchUserData = {
     id: 'u1',
     name: 'Mike',
     job: { title: 'own company', descripttion: 'my own brand' }
 };
 console.log((_b = (_a = fetchUserData) === null || _a === void 0 ? void 0 : _a.job) === null || _b === void 0 ? void 0 : _b.title);
-var userInput = null;
-var storedData = (userInput !== null && userInput !== void 0 ? userInput : 'Default');
+const userInput = null;
+const storedData = (userInput !== null && userInput !== void 0 ? userInput : 'Default');
 console.log(storedData);
